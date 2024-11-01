@@ -1,0 +1,4 @@
+This is an example of writing to a file.
+File handling in Python is simple and easy.
+This text is appended to the existing file content.
+And this text is appended to the existing file content, too!
