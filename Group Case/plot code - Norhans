@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+enrollment_data = concat_df.pivot_table(values="All Students", 
+                                        index="GradeLevel", 
+                                        columns="SchoolYear", 
+                                        aggfunc="sum")
+
+plt.figure(figsize=(10, 6))
+for grade in enrollment_data.index:
+    plt.plot(enrollment_data.columns, enrollment_data.loc[grade], marker='o', label=grade)
+
+plt.title('Enrollment Trend by Grade from 2020 to 2024')
+plt.xlabel('School Year')
+plt.ylabel('Number of Students')
+plt.legend(title="Grade Level", bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
